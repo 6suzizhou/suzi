@@ -1,0 +1,1675 @@
+{
+  "fill": [
+    {
+      "id": 1,
+      "question": "数据仓库是一个面向主题的、集成的、相对稳定的、反映______的数据集合，用于支持管理决策。",
+      "answer": "历史变化",
+      "type": "fill"
+    },
+    {
+      "id": 2,
+      "question": "数据仓库系统的核心是______本身。",
+      "answer": "数据仓库",
+      "type": "fill"
+    },
+    {
+      "id": 3,
+      "question": "ETL过程的三个主要步骤是：______、______和______。",
+      "answer": "抽取,转换,加载",
+      "type": "fill"
+    },
+    {
+      "id": 4,
+      "question": "在数据仓库的粒度设计中，粒度越细，能回答的查询就越多，但需要更多的______。",
+      "answer": "存储空间",
+      "type": "fill"
+    },
+    {
+      "id": 5,
+      "question": "多维数据模型最常见的两种模式是______和______。",
+      "answer": "星型模式,雪花模式",
+      "type": "fill"
+    },
+    {
+      "id": 6,
+      "question": "在维度模型中，日期、商品、地区等通常被设计为______，而销售额、销售数量等则被设计为______。",
+      "answer": "维度表,事实表",
+      "type": "fill"
+    },
+    {
+      "id": 7,
+      "question": "数据挖掘是从大量的、不完全的、有噪声的、模糊的、随机的数据中，提取隐含在其中、人们事先不知道、但又是潜在有用的______的过程。",
+      "answer": "信息和知识",
+      "type": "fill"
+    },
+    {
+      "id": 8,
+      "question": "CRISP-DM模型中，六个阶段分别是：商业理解、______、数据准备、建模、评估和部署。",
+      "answer": "数据理解",
+      "type": "fill"
+    },
+    {
+      "id": 9,
+      "question": "关联规则 X -> Y的支持度是指事务集中同时包含X和Y的事务所占的______。",
+      "answer": "百分比",
+      "type": "fill"
+    },
+    {
+      "id": 10,
+      "question": "关联规则 X -> Y的置信度是指在包含X的事务中，同时也包含Y的______。",
+      "answer": "条件概率",
+      "type": "fill"
+    },
+    {
+      "id": 11,
+      "question": "在Apriori算法中，用于剪枝的核心性质是：频繁项集的所有非空子集也必须是______。",
+      "answer": "频繁的",
+      "type": "fill"
+    },
+    {
+      "id": 12,
+      "question": "决策树算法中，用于选择分裂属性的指标有______、增益率和基尼指数。",
+      "answer": "信息增益",
+      "type": "fill"
+    },
+    {
+      "id": 13,
+      "question": "ID3决策树算法使用______作为属性选择准则。",
+      "answer": "信息增益",
+      "type": "fill"
+    },
+    {
+      "id": 14,
+      "question": "在K-Means聚类算法中，K代表的是______。",
+      "answer": "预设的聚类数量",
+      "type": "fill"
+    },
+    {
+      "id": 15,
+      "question": "聚类分析中，样本之间的相似性度量通常使用______来衡量，如欧氏距离。",
+      "answer": "距离",
+      "type": "fill"
+    },
+    {
+      "id": 16,
+      "question": "贝叶斯分类是基于______的一种分类方法。",
+      "answer": "贝叶斯定理",
+      "type": "fill"
+    },
+    {
+      "id": 17,
+      "question": "K-近邻（KNN）分类算法中，K值的选择对分类结果有显著影响，K值越大，模型的______越大，______越小。",
+      "answer": "偏差,方差",
+      "type": "fill"
+    },
+    {
+      "id": 18,
+      "question": "数据预处理的主要步骤包括数据清洗、数据集成、______和数据归约。",
+      "answer": "数据变换",
+      "type": "fill"
+    },
+    {
+      "id": 19,
+      "question": "处理数据中缺失值的方法有删除记录、______填充、使用预测模型填充等。",
+      "answer": "均值/中位数/众数",
+      "type": "fill"
+    },
+    {
+      "id": 20,
+      "question": "数据规范化（归一化）的常用方法有：最小-最大规范化、______和小数定标规范化。",
+      "answer": "z-score规范化",
+      "type": "fill"
+    },
+    {
+      "id": 21,
+      "question": "主成分分析（PCA）是一种常用的______技术。",
+      "answer": "数据降维",
+      "type": "fill"
+    },
+    {
+      "id": 22,
+      "question": "在评估分类模型时，将样本实际类别和预测类别组合，可以得到一个______。",
+      "answer": "混淆矩阵",
+      "type": "fill"
+    },
+    {
+      "id": 23,
+      "question": "分类模型的______是指被正确分类的样本数占总样本数的比例。",
+      "answer": "准确率",
+      "type": "fill"
+    },
+    {
+      "id": 24,
+      "question": "______衡量的是所有被预测为正类的样本中，真正为正类的比例。",
+      "answer": "精准率（Precision）",
+      "type": "fill"
+    },
+    {
+      "id": 25,
+      "question": "______衡量的是所有真实为正类的样本中，被正确预测为正类的比例。",
+      "answer": "召回率（Recall）",
+      "type": "fill"
+    },
+    {
+      "id": 26,
+      "question": "支持向量机（SVM）的目标是找到一个______的超平面来划分数据。",
+      "answer": "最大间隔",
+      "type": "fill"
+    },
+    {
+      "id": 27,
+      "question": "当数据线性不可分时，SVM通过______将数据映射到高维空间，使其变得线性可分。",
+      "answer": "核函数",
+      "type": "fill"
+    },
+    {
+      "id": 28,
+      "question": "随机森林是由______组成的集成学习算法。",
+      "answer": "多棵决策树",
+      "type": "fill"
+    },
+    {
+      "id": 29,
+      "question": "集成学习中，Bagging通过______构建多个基学习器，主要降低模型方差。",
+      "answer": "自助采样法",
+      "type": "fill"
+    },
+    {
+      "id": 30,
+      "question": "关联规则挖掘中，如果一个项集的支持度大于等于最小支持度阈值，则称该项集为______。",
+      "answer": "频繁项集",
+      "type": "fill"
+    },
+    {
+      "id": 31,
+      "question": "在序列模式挖掘中，需要考虑事件发生的______。",
+      "answer": "顺序",
+      "type": "fill"
+    },
+    {
+      "id": 32,
+      "question": "离群点（异常点）检测是找出其行为与______显著不同的对象。",
+      "answer": "大多数对象",
+      "type": "fill"
+    },
+    {
+      "id": 33,
+      "question": "文本挖掘中，将文档转换为向量表示的常用模型是______。",
+      "answer": "词袋模型",
+      "type": "fill"
+    },
+    {
+      "id": 34,
+      "question": "词袋模型忽略掉了文本中的______和语法信息。",
+      "answer": "词序",
+      "type": "fill"
+    },
+    {
+      "id": 35,
+      "question": "通过TF-IDF可以计算词语在文档中的重要性，其中TF代表______，IDF代表______。",
+      "answer": "词频,逆文档频率",
+      "type": "fill"
+    },
+    {
+      "id": 36,
+      "question": "Web挖掘主要分为三类：______、Web结构挖掘和Web使用挖掘。",
+      "answer": "Web内容挖掘",
+      "type": "fill"
+    },
+    {
+      "id": 37,
+      "question": "数据仓库中的数据通常分为当前细节级、轻度综合级、______等多个级别。",
+      "answer": "高度综合级",
+      "type": "fill"
+    },
+    {
+      "id": 38,
+      "question": "元数据是\"关于数据的数据\"，在数据仓库中主要分为______和______。",
+      "answer": "技术元数据,业务元数据",
+      "type": "fill"
+    },
+    {
+      "id": 39,
+      "question": "OLAP操作中，______可以查看更详细的数据，而______则进行数据汇总。",
+      "answer": "钻取操作,上卷操作",
+      "type": "fill"
+    },
+    {
+      "id": 40,
+      "question": "时间序列挖掘的目标是从按时间顺序排列的数据点中找出有意义的______和______。",
+      "answer": "模式,趋势",
+      "type": "fill"
+    }
+  ],
+  "choice": [
+    {
+      "id": 1,
+      "question": "数据仓库数据的哪个特性意味着数据一旦进入数据仓库，一般不会被修改或删除？",
+      "options": {
+        "A": "面向主题",
+        "B": "集成性",
+        "C": "非易失性",
+        "D": "时变性"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 2,
+      "question": "以下哪项不是数据仓库的特点？",
+      "options": {
+        "A": "面向事务",
+        "B": "面向分析",
+        "C": "数据集成",
+        "D": "历史数据"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 3,
+      "question": "数据仓库的概念是由谁提出的？",
+      "options": {
+        "A": "E.F. Codd",
+        "B": "Bill Inmon",
+        "C": "Raymond Agrawal",
+        "D": "Jiawei Han"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 4,
+      "question": "关于ODS（操作数据存储）的说法，错误的是？",
+      "options": {
+        "A": "面向主题的",
+        "B": "集成的",
+        "C": "当前的或近当前的",
+        "D": "主要用于长期的历史分析"
+      },
+      "answer": "D",
+      "type": "choice"
+    },
+    {
+      "id": 5,
+      "question": "数据仓库的最终目的是？",
+      "options": {
+        "A": "存储海量数据",
+        "B": "进行联机事务处理（OLTP）",
+        "C": "支持管理决策",
+        "D": "替代数据库"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 6,
+      "question": "“数据超市”通常是指？",
+      "options": {
+        "A": "整个企业的中央数据仓库",
+        "B": "面向特定部门或主题的小型数据仓库",
+        "C": "ODS",
+        "D": "源数据库"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 7,
+      "question": "在数据仓库的三层架构中，不包括以下哪一层？",
+      "options": {
+        "A": "数据源层",
+        "B": "ETL层",
+        "C": "数据仓库存储层",
+        "D": "业务应用层"
+      },
+      "answer": "D",
+      "type": "choice"
+    },
+    {
+      "id": 8,
+      "question": "元数据不包含以下哪种信息？",
+      "options": {
+        "A": "数据源的描述",
+        "B": "数据转换规则",
+        "C": "具体的销售记录",
+        "D": "数据粒度的定义"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 9,
+      "question": "数据仓库的数据粒度描述了数据的？",
+      "options": {
+        "A": "质量水平",
+        "B": "详细程度",
+        "C": "来源渠道",
+        "D": "存储格式"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 10,
+      "question": "以下关于数据仓库和数据库的说法，正确的是？",
+      "options": {
+        "A": "数据仓库是数据库的替代品",
+        "B": "数据库主要用于复杂分析，数据仓库用于日常事务处理",
+        "C": "数据仓库的数据来源于多个异构的操作型数据库",
+        "D": "数据库和数据仓库没有区别"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 11,
+      "question": "在星型模式中，事实表与维度表之间的关系通常是？",
+      "options": {
+        "A": "一对一",
+        "B": "多对多",
+        "C": "一对多",
+        "D": "没有关系"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 12,
+      "question": "以下哪张表最可能是一个事实表？",
+      "options": {
+        "A": "商品表（商品ID，商品名称，类别）",
+        "B": "客户表（客户ID，客户姓名，地址）",
+        "C": "销售记录表（交易ID，时间ID，商品ID，客户ID，销售金额）",
+        "D": "日期表（日期ID，年，月，日）"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 13,
+      "question": "雪花模式与星型模式的主要区别在于？",
+      "options": {
+        "A": "事实表的结构不同",
+        "B": "维度表是否进行了规范化",
+        "C": "包含的维度数量不同",
+        "D": "数据量大小不同"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 14,
+      "question": "以下哪个OLAP操作可以将不同城市的数据汇总到国家级别？",
+      "options": {
+        "A": "切片",
+        "B": "切块",
+        "C": "钻取",
+        "D": "上卷"
+      },
+      "answer": "D",
+      "type": "choice"
+    },
+    {
+      "id": 15,
+      "question": "哪个OLAP操作是固定一个维度的成员，观察其他维度的数据？",
+      "options": {
+        "A": "切片",
+        "B": "旋转",
+        "C": "钻取",
+        "D": "上卷"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 16,
+      "question": "关于维度表中的“缓慢变化维”问题，以下哪种解决方案是直接用新值覆盖旧值？",
+      "options": {
+        "A": "类型1",
+        "B": "类型2",
+        "C": "类型3",
+        "D": "类型4"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 17,
+      "question": "哪种缓慢变化维解决方案会添加新的维度行来保存历史记录？",
+      "options": {
+        "A": "类型1",
+        "B": "类型2",
+        "C": "类型3",
+        "D": "类型4"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 18,
+      "question": "在事实表中，最常见的键是？",
+      "options": {
+        "A": "主键",
+        "B": "外键",
+        "C": "代理键",
+        "D": "唯一键"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 19,
+      "question": "多维表达式（MDX）主要用于？",
+      "options": {
+        "A": "关系数据库查询",
+        "B": "数据挖掘算法实现",
+        "C": "多维数据库查询",
+        "D": "ETL过程开发"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 20,
+      "question": "以下关于粒度说法错误的是？",
+      "options": {
+        "A": "低粒度数据细节丰富，存储空间大",
+        "B": "高粒度数据是高度汇总的数据",
+        "C": "粒度设计不影响查询性能",
+        "D": "粒度设计需要在存储成本和查询需求之间平衡"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 21,
+      "question": "ETL过程中的“T”代表什么？",
+      "options": {
+        "A": "传输",
+        "B": "转换",
+        "C": "交易",
+        "D": "测试"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 22,
+      "question": "以下哪项不是数据清洗的主要任务？",
+      "options": {
+        "A": "处理缺失值",
+        "B": "平滑噪声数据",
+        "C": "数据集成",
+        "D": "识别并消除异常点"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 23,
+      "question": "将数据按比例缩放，使之落入一个特定的区间（如[0,1]）的方法是？",
+      "options": {
+        "A": "数据清洗",
+        "B": "最小-最大规范化",
+        "C": "z-score规范化",
+        "D": "数据聚合"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 24,
+      "question": "使用数据的均值和标准差进行规范化，得到均值为0，标准差为1的数据分布的方法是？",
+      "options": {
+        "A": "小数定标规范化",
+        "B": "z-score规范化",
+        "C": "最小-最大规范化",
+        "D": "对数变换"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 25,
+      "question": "将多个数据源中的数据合并并存放到一个一致的数据存储（如数据仓库）中的过程是？",
+      "options": {
+        "A": "数据清洗",
+        "B": "数据集成",
+        "C": "数据变换",
+        "D": "数据归约"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 26,
+      "question": "数据归约技术不包括？",
+      "options": {
+        "A": "数据立方体聚合",
+        "B": "维度归约（如PCA）",
+        "C": "数值归约（如回归、聚类）",
+        "D": "数据加密"
+      },
+      "answer": "D",
+      "type": "choice"
+    },
+    {
+      "id": 27,
+      "question": "主成分分析（PCA）是一种？",
+      "options": {
+        "A": "分类技术",
+        "B": "聚类技术",
+        "C": "维度归约技术",
+        "D": "关联规则挖掘技术"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 28,
+      "question": "处理缺失值时，用一个全局常量（如“unknown”）填充，这种方法的主要缺点是？",
+      "options": {
+        "A": "计算复杂",
+        "B": "可能会扭曲数据的分布",
+        "C": "无法处理数值型数据",
+        "D": "以上都是"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 29,
+      "question": "在数据集成中，来自不同数据源的同一个实体，由于命名不同而导致的问题称为？",
+      "options": {
+        "A": "冗余问题",
+        "B": "不一致问题",
+        "C": "实体识别问题",
+        "D": "模式集成问题"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 30,
+      "question": "以下哪种方法不是处理数据冗余的方法？",
+      "options": {
+        "A": "相关性分析",
+        "B": "协方差计算",
+        "C": "主成分分析",
+        "D": "决策树"
+      },
+      "answer": "D",
+      "type": "choice"
+    },
+    {
+      "id": 31,
+      "question": "数据挖掘是以下哪个数据库阶段的发展？",
+      "options": {
+        "A": "数据采集",
+        "B": "数据管理",
+        "C": "数据分析和理解",
+        "D": "数据存储"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 32,
+      "question": "以下哪项不是数据挖掘的主要任务？",
+      "options": {
+        "A": "分类与预测",
+        "B": "聚类分析",
+        "C": "关联规则挖掘",
+        "D": "联机事务处理"
+      },
+      "answer": "D",
+      "type": "choice"
+    },
+    {
+      "id": 33,
+      "question": "关联规则挖掘的目的是发现数据中项与项之间的？",
+      "options": {
+        "A": "因果关系",
+        "B": "相关关系",
+        "C": "函数关系",
+        "D": "逻辑关系"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 34,
+      "question": "关联规则 A -> B 的置信度为60%表示？",
+      "options": {
+        "A": "所有事务中60%同时包含A和B",
+        "B": "包含A的事务中，有60%也包含B",
+        "C": "包含B的事务中，有60%也包含A",
+        "D": "A和B同时出现的概率是60%"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 35,
+      "question": "Apriori算法利用了什么性质来提高效率？",
+      "options": {
+        "A": "任何频繁项集的子集都是频繁的",
+        "B": "任何非频繁项集的超集都是非频繁的",
+        "C": "任何频繁项集的超集都是频繁的",
+        "D": "任何非频繁项集的子集都是非频繁的"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 36,
+      "question": "除了Apriori，另一种常见的关联规则挖掘算法是？",
+      "options": {
+        "A": "K-Means",
+        "B": "FP-Growth",
+        "C": "ID3",
+        "D": "PageRank"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 37,
+      "question": "如果最小支持度设置过高，会导致？",
+      "options": {
+        "A": "发现过多的规则",
+        "B": "可能漏掉一些有意义的规则",
+        "C": "计算时间变长",
+        "D": "规则置信度降低"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 38,
+      "question": "评估关联规则除了支持度和置信度，还可以用？",
+      "options": {
+        "A": "准确率",
+        "B": "召回率",
+        "C": "提升度",
+        "D": "F1值"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 39,
+      "question": "序列模式挖掘与关联规则挖掘的主要区别是？",
+      "options": {
+        "A": "不考虑支持度",
+        "B": "考虑了时间顺序",
+        "C": "不考虑置信度",
+        "D": "只能用于数值型数据"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 40,
+      "question": "“啤酒与尿布”的故事是哪种数据挖掘任务的典型例子？",
+      "options": {
+        "A": "分类",
+        "B": "聚类",
+        "C": "关联规则",
+        "D": "异常检测"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 41,
+      "question": "以下哪种算法是分类算法？",
+      "options": {
+        "A": "K-Means",
+        "B": "Apriori",
+        "C": "决策树",
+        "D": "DBSCAN"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 42,
+      "question": "决策树中，ID3算法使用什么来选择分裂属性？",
+      "options": {
+        "A": "基尼指数",
+        "B": "信息增益",
+        "C": "增益率",
+        "D": "分类错误率"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 43,
+      "question": "C4.5决策树算法使用什么来克服信息增益对多值属性的偏好？",
+      "options": {
+        "A": "基尼指数",
+        "B": "信息增益",
+        "C": "增益率",
+        "D": "分类错误率"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 44,
+      "question": "在决策树构建过程中，停止分裂的条件不包括？",
+      "options": {
+        "A": "节点中所有样本属于同一类",
+        "B": "没有属性可用于进一步分裂",
+        "C": "树深度达到预设值",
+        "D": "模型在训练集上准确率达到100%"
+      },
+      "answer": "D",
+      "type": "choice"
+    },
+    {
+      "id": 45,
+      "question": "朴素贝叶斯分类器的“朴素”之处在于？",
+      "options": {
+        "A": "假设属性之间相互独立",
+        "B": "算法实现简单",
+        "C": "分类效果一般",
+        "D": "不需要训练"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 46,
+      "question": "K-近邻（KNN）算法在分类时，对于未知样本，根据什么确定其类别？",
+      "options": {
+        "A": "距离它最近的K个样本的多数类别",
+        "B": "距离它最远的K个样本的多数类别",
+        "C": "所有样本的类别平均值",
+        "D": "随机猜测"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 47,
+      "question": "支持向量机（SVM）寻找的最佳超平面是？",
+      "options": {
+        "A": "距离所有样本点最近",
+        "B": "距离正类样本最近",
+        "C": "距离负类样本最近",
+        "D": "距离两类样本边界点（支持向量）最远"
+      },
+      "answer": "D",
+      "type": "choice"
+    },
+    {
+      "id": 48,
+      "question": "当数据线性不可分时，SVM通过什么方法处理？",
+      "options": {
+        "A": "引入松弛变量",
+        "B": "使用核函数",
+        "C": "A和B都可以",
+        "D": "无法处理"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 49,
+      "question": "以下关于逻辑回归的说法，正确的是？",
+      "options": {
+        "A": "是一种回归算法，用于预测连续值",
+        "B": "是一种分类算法，输出是概率值",
+        "C": "不需要训练过程",
+        "D": "只能处理二分类问题"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 50,
+      "question": "在评估分类模型时，真正例（TP）是指？",
+      "options": {
+        "A": "实际为正类，预测也为正类的样本数",
+        "B": "实际为负类，预测为正类的样本数",
+        "C": "实际为正类，预测为负类的样本数",
+        "D": "实际为负类，预测也为负类的样本数"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 51,
+      "question": "准确率的计算公式是？",
+      "options": {
+        "A": "TP / (TP + FP)",
+        "B": "TP / (TP + FN)",
+        "C": "(TP + TN) / (TP + TN + FP + FN)",
+        "D": "(TP + FP) / (TP + TN + FP + FN)"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 52,
+      "question": "精准率（Precision）的计算公式是？",
+      "options": {
+        "A": "TP / (TP + FP)",
+        "B": "TP / (TP + FN)",
+        "C": "(TP + TN) / (TP + TN + FP + FN)",
+        "D": "(TP + FP) / (TP + TN + FP + FN)"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 53,
+      "question": "召回率（Recall）的计算公式是？",
+      "options": {
+        "A": "TP / (TP + FP)",
+        "B": "TP / (TP + FN)",
+        "C": "(TP + TN) / (TP + TN + FP + FN)",
+        "D": "(TP + FP) / (TP + TN + FP + FN)"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 54,
+      "question": "F1-Score是以下哪两者的调和平均？",
+      "options": {
+        "A": "准确率和召回率",
+        "B": "精准率和召回率",
+        "C": "真正例率和假正例率",
+        "D": "敏感性和特异性"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 55,
+      "question": "ROC曲线的横轴和纵轴分别是？",
+      "options": {
+        "A": "精准率，召回率",
+        "B": "假正例率，真正例率",
+        "C": "召回率，精准率",
+        "D": "真正例率，假正例率"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 56,
+      "question": "AUC值的含义是？",
+      "options": {
+        "A": "ROC曲线下的面积，值越大模型越好",
+        "B": "准确率曲线下的面积",
+        "C": "模型的错误率",
+        "D": "模型的复杂度"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 57,
+      "question": "将数据集一部分用于训练，另一部分用于测试，这种方法称为？",
+      "options": {
+        "A": "留出法",
+        "B": "交叉验证法",
+        "C": "自助法",
+        "D": "装袋法"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 58,
+      "question": "10折交叉验证是指？",
+      "options": {
+        "A": "将数据分成10份，轮流用9份训练，1份测试，重复10次",
+        "B": "将数据分成10份，用1份训练，9份测试",
+        "C": "训练10个不同的模型",
+        "D": "测试10次"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 59,
+      "question": "集成学习通过结合多个基学习器来提高性能，以下哪个是集成学习方法？",
+      "options": {
+        "A": "决策树",
+        "B": "贝叶斯",
+        "C": "随机森林",
+        "D": "KNN"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 60,
+      "question": "随机森林中“随机”体现在？",
+      "options": {
+        "A": "样本随机采样",
+        "B": "特征随机选择",
+        "C": "A和B都是",
+        "D": "树的数量随机"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 61,
+      "question": "以下哪种算法是聚类算法？",
+      "options": {
+        "A": "K-Means",
+        "B": "决策树",
+        "C": "SVM",
+        "D": "Apriori"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 62,
+      "question": "聚类分析属于？",
+      "options": {
+        "A": "有监督学习",
+        "B": "无监督学习",
+        "C": "半监督学习",
+        "D": "强化学习"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 63,
+      "question": "K-Means算法中，K值的确定通常使用？",
+      "options": {
+        "A": "肘部法则",
+        "B": "交叉验证",
+        "C": "计算准确率",
+        "D": "计算支持度"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 64,
+      "question": "K-Means算法的核心步骤不包括？",
+      "options": {
+        "A": "随机选择K个中心点",
+        "B": "计算每个点到中心点的距离并归类",
+        "C": "重新计算每个簇的中心点",
+        "D": "计算类的先验概率"
+      },
+      "answer": "D",
+      "type": "choice"
+    },
+    {
+      "id": 65,
+      "question": "以下哪种聚类算法不需要预先指定簇的数目？",
+      "options": {
+        "A": "K-Means",
+        "B": "DBSCAN",
+        "C": "K-中心点",
+        "D": "层次聚类（通过指定最终簇数）"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 66,
+      "question": "DBSCAN算法将数据点分为哪三类？",
+      "options": {
+        "A": "核心点、边界点、噪声点",
+        "B": "中心点、边缘点、离群点",
+        "C": "高密度点、低密度点、中点",
+        "D": "一类点、二类点、三类点"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 67,
+      "question": "层次聚类的结果通常用什么表示？",
+      "options": {
+        "A": "散点图",
+        "B": "树状图",
+        "C": "折线图",
+        "D": "饼图"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 68,
+      "question": "聚类效果的内部评估指标是？",
+      "options": {
+        "A": "准确率",
+        "B": "兰德指数",
+        "C": "轮廓系数",
+        "D": "F1值"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 69,
+      "question": "两个簇的质心之间的距离可以作为哪种距离的度量？",
+      "options": {
+        "A": "簇内距离",
+        "B": "簇间距离",
+        "C": "样本间距离",
+        "D": "平均距离"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 70,
+      "question": "对于球形簇分布，哪种算法效果通常较好？",
+      "options": {
+        "A": "K-Means",
+        "B": "DBSCAN",
+        "C": "谱聚类",
+        "D": "以上都可以"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 71,
+      "question": "离群点检测的目标是发现？",
+      "options": {
+        "A": "最频繁出现的模式",
+        "B": "与大多数数据行为不一致的对象",
+        "C": "数据中的关联规则",
+        "D": "数据的分类标签"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 72,
+      "question": "文本挖掘中，TF-IDF用于？",
+      "options": {
+        "A": "评估词语的重要性",
+        "B": "进行词性标注",
+        "C": "进行句法分析",
+        "D": "翻译文本"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 73,
+      "question": "词袋模型（Bag of Words）的主要缺点是？",
+      "options": {
+        "A": "忽略词序信息",
+        "B": "计算复杂度高",
+        "C": "无法处理新词",
+        "D": "需要大量标注数据"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 74,
+      "question": "Web使用挖掘主要分析的数据是？",
+      "options": {
+        "A": "网页内容",
+        "B": "网页之间的超链接",
+        "C": "用户的访问日志",
+        "D": "用户的个人信息"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 75,
+      "question": "时间序列数据的特点是？",
+      "options": {
+        "A": "数据点相互独立",
+        "B": "数据点按时间顺序排列且存在依赖关系",
+        "C": "数据是高维的",
+        "D": "数据是文本形式的"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 76,
+      "question": "以下哪个不是时间序列预测的模型？",
+      "options": {
+        "A": "ARIMA模型",
+        "B": "线性回归（不考虑时间顺序）",
+        "C": "循环神经网络（RNN）",
+        "D": "K-Means"
+      },
+      "answer": "D",
+      "type": "choice"
+    },
+    {
+      "id": 77,
+      "question": "社会网络分析中，用于衡量节点重要性的指标是？",
+      "options": {
+        "A": "中心性",
+        "B": "支持度",
+        "C": "置信度",
+        "D": "准确率"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 78,
+      "question": "PageRank算法最初用于？",
+      "options": {
+        "A": "商品推荐",
+        "B": "网页排序",
+        "C": "图像识别",
+        "D": "文本分类"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 79,
+      "question": "数据挖掘中的“维度灾难”是指？",
+      "options": {
+        "A": "数据量太大",
+        "B": "随着维度增加，数据变得稀疏，导致算法效率下降",
+        "C": "数据质量太差",
+        "D": "算法太复杂"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 80,
+      "question": "关于大数据的特点，通常不包括？",
+      "options": {
+        "A": "体积大",
+        "B": "处理速度快",
+        "C": "价值密度高",
+        "D": "种类多"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 81,
+      "question": "一个分类模型在训练集上准确率很高，但在测试集上很低，这种现象称为？",
+      "options": {
+        "A": "欠拟合",
+        "B": "过拟合",
+        "C": "正常拟合",
+        "D": "最佳拟合"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 82,
+      "question": "解决过拟合的方法不包括？",
+      "options": {
+        "A": "增加训练数据",
+        "B": "减少模型复杂度（如剪枝）",
+        "C": "使用正则化",
+        "D": "增加模型参数"
+      },
+      "answer": "D",
+      "type": "choice"
+    },
+    {
+      "id": 83,
+      "question": "在建立客户流失预测模型时，最可能使用的数据挖掘任务是？",
+      "options": {
+        "A": "关联规则",
+        "B": "聚类",
+        "C": "分类",
+        "D": "离群点检测"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 84,
+      "question": "在市场篮分析中，最可能使用的数据挖掘任务是？",
+      "options": {
+        "A": "关联规则",
+        "B": "聚类",
+        "C": "分类",
+        "D": "离群点检测"
+      },
+      "answer": "A",
+      "type": "choice"
+    },
+    {
+      "id": 85,
+      "question": "在客户细分中，最可能使用的数据挖掘任务是？",
+      "options": {
+        "A": "关联规则",
+        "B": "聚类",
+        "C": "分类",
+        "D": "离群点检测"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 86,
+      "question": "在信用卡欺诈检测中，最可能使用的数据挖掘任务是？",
+      "options": {
+        "A": "关联规则",
+        "B": "聚类",
+        "C": "分类",
+        "D": "离群点检测"
+      },
+      "answer": "D",
+      "type": "choice"
+    },
+    {
+      "id": 87,
+      "question": "Hadoop生态系统中的MapReduce主要用于？",
+      "options": {
+        "A": "分布式存储",
+        "B": "分布式计算",
+        "C": "数据挖掘算法库",
+        "D": "工作流调度"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 88,
+      "question": "Spark相比MapReduce的一个主要优势是？",
+      "options": {
+        "A": "磁盘计算",
+        "B": "内存计算",
+        "C": "不支持迭代计算",
+        "D": "只能用于流处理"
+      },
+      "answer": "B",
+      "type": "choice"
+    },
+    {
+      "id": 89,
+      "question": "数据挖掘项目的成功最重要的因素是？",
+      "options": {
+        "A": "强大的计算资源",
+        "B": "先进的算法",
+        "C": "正确的业务理解和数据理解",
+        "D": "复杂的模型"
+      },
+      "answer": "C",
+      "type": "choice"
+    },
+    {
+      "id": 90,
+      "question": "关于数据挖掘中的伦理问题，以下说法错误的是？",
+      "options": {
+        "A": "需要注意用户隐私保护",
+        "B": "挖掘结果可能带有偏见",
+        "C": "可以随意使用任何数据",
+        "D": "模型决策需要可解释性"
+      },
+      "answer": "C",
+      "type": "choice"
+    }
+  ],
+  "judge": [
+    {
+      "id": 1,
+      "question": "数据仓库中的数据是实时更新的。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 2,
+      "question": "OLTP系统主要负责日常的事务处理，而OLAP系统负责复杂分析。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 3,
+      "question": "维度建模完全遵循数据库的第三范式。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 4,
+      "question": "事实表通常包含大量的外键和数值型度量。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 5,
+      "question": "ETL过程只在数据仓库初始化时执行一次。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 6,
+      "question": "数据挖掘可以发现数据之间潜在的、未知的、有价值的模式。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 7,
+      "question": "关联规则的支持度越高，规则一定越有用。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 8,
+      "question": "Apriori算法是一种产生频繁项集的迭代方法。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 9,
+      "question": "决策树算法只能处理分类问题，不能处理回归问题。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 10,
+      "question": "在K-Means聚类中，初始中心点的选择对最终结果没有影响。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 11,
+      "question": "聚类分析是一种有监督的学习方法。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 12,
+      "question": "贝叶斯分类需要类条件独立假设。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 13,
+      "question": "K-近邻（KNN）是一种惰性学习算法。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 14,
+      "question": "支持向量机（SVM）只能处理线性可分的数据。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 15,
+      "question": "逻辑回归的输出值是连续的概率值。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 16,
+      "question": "准确率是评估分类模型唯一可靠的指标。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 17,
+      "question": "在类别不平衡的数据集中，精准率和召回率比准确率更重要。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 18,
+      "question": "交叉验证可以用来评估模型的泛化能力。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 19,
+      "question": "随机森林通过降低方差来提高模型性能。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 20,
+      "question": "主成分分析（PCA）是一种有监督的降维方法。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 21,
+      "question": "数据规范化可以消除数据中的噪声。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 22,
+      "question": "处理缺失值时，直接删除有缺失值的记录总是最好的方法。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 23,
+      "question": "离群点总是错误数据，应该被删除。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 24,
+      "question": "文本挖掘中的词袋模型考虑了词语的顺序信息。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 25,
+      "question": "TF-IDF值高的词，意味着它在某个文档中频繁出现，并且在所有文档中都频繁出现。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 26,
+      "question": "Web挖掘只关注网页的文本内容。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 27,
+      "question": "时间序列预测需要考虑数据的周期性。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 28,
+      "question": "数据挖掘可以确保100%准确地预测未来。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 29,
+      "question": "数据挖掘模型构建得越复杂，其在实际应用中的效果就一定越好。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 30,
+      "question": "业务理解是CRISP-DM模型的第一步，也是至关重要的一步。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 31,
+      "question": "数据仓库是数据集市的一个子集。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 32,
+      "question": "雪花模式比星型模式查询性能更好。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 33,
+      "question": "缓慢变化维类型2可以记录维度成员的历史变化。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 34,
+      "question": "OLAP操作中的钻取可以沿着维的层次向下，查看更详细的数据。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 35,
+      "question": "关联规则挖掘中，置信度衡量的是规则的精确度。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 36,
+      "question": "FP-Growth算法不需要生成候选项集。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 37,
+      "question": "信息增益在选择属性时，会对取值数目较多的属性有偏好。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 38,
+      "question": "基尼指数越大，表示数据集的纯度越高。",
+      "answer": "×",
+      "type": "judge"
+    },
+    {
+      "id": 39,
+      "question": "DBSCAN聚类算法对噪声数据不敏感。",
+      "answer": "√",
+      "type": "judge"
+    },
+    {
+      "id": 40,
+      "question": "大数据中的“价值密度高”意味着大数据中蕴含的价值比例很高。",
+      "answer": "×",
+      "type": "judge"
+    }
+  ],
+  "program": [
+    {
+      "id": 1,
+      "title": "决策树实现与可视化",
+      "question": "使用Scikit-learn库，在鸢尾花（Iris）数据集上构建一个决策树分类器。要求：\n加载数据并按7:3的比例划分训练集和测试集。使用DecisionTreeClassifier进行训练，并设置max_depth=3和random_state=42。在测试集上进行预测，并输出模型的准确率、精确率、召回率和F1-score（宏平均）。（选做）使用plot_tree函数将训练好的决策树可视化。",
+      "answer": "# 1导入库和数据\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeClassifier, plot_tree\nfrom sklearn.metrics import accuracy_score, classification_report\nimport matplotlib.pyplot as plt\n\niris = load_iris()\nX, y = iris.data, iris.target\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)\n\n# 2创建并训练模型\ndt_clf = DecisionTreeClassifier(max_depth=3, random_state=42)\ndt_clf.fit(X_train, y_train)\n\n# 3预测与评估\ny_pred = dt_clf.predict(X_test)\naccuracy = accuracy_score(y_test, y_pred)\nprint(f\"准确率 (Accuracy): {accuracy:.4f}\")\nprint(\"\\n分类报告 (Classification Report):\")\nprint(classification_report(y_test, y_pred, target_names=iris.target_names))\n\n# 4（选做）可视化\nplt.figure(figsize=(12, 8))\nplot_tree(dt_clf, feature_names=iris.feature_names, class_names=iris.target_names, filled=True)\nplt.title(\"决策树可视化\")\nplt.show()",
+      "type": "program"
+    },
+    {
+      "id": 2,
+      "title": "集成学习模型比较",
+      "question": "使用Scikit-learn，在威斯康星州乳腺癌数据集上比较随机森林（Random Forest）和梯度提升树（Gradient Boosting）的性能。\n加载数据load_breast_cancer()，并进行训练/测试集划分。\n分别使用RandomForestClassifier和GradientBoostingClassifier，均设置n_estimators=100和random_state=42。\n分别对两个模型进行训练和预测。\n输出两个模型在测试集上的准确率和AUC值。\n简要说明哪个模型在此数据集上表现更好，并分析可能的原因。",
+      "answer": "from sklearn.datasets import load_breast_cancer\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier\nfrom sklearn.metrics import accuracy_score, roc_auc_score\n\n# 1加载数据\ndata = load_breast_cancer()\nX, y = data.data, data.target\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)\n\n# 2初始化模型\nrf_clf = RandomForestClassifier(n_estimators=100, random_state=42)\ngb_clf = GradientBoostingClassifier(n_estimators=100, random_state=42)\n\n# 3训练与预测\nmodels = {'Random Forest': rf_clf, 'Gradient Boosting': gb_clf}\nfor name, model in models.items():\n    model.fit(X_train, y_train)\n    y_pred = model.predict(X_test)\n    y_pred_proba = model.predict_proba(X_test)[:, 1] # 用于计算AUC\n    acc = accuracy_score(y_test, y_pred)\n    auc = roc_auc_score(y_test, y_pred_proba)\n    print(f\"{name} - 准确率: {acc:.4f}, AUC: {auc:.4f}\")\n\n# 4分析：通常GBDT的准确率可能略高，但RF训练更快。具体结果取决于数据划分和参数。原因可能包括：GBDT通过串行学习不断修正错误，可能构建更精确的模型；RF通过降低方差提高泛化能力。",
+      "type": "program"
+    },
+    {
+      "id": 3,
+      "title": "线性回归与性能评估",
+      "question": "使用Scikit-learn的波士顿房价数据集（或加州住房数据集fetch_california_housing），建立一个线性回归模型来预测房价。\n加载数据，划分训练集和测试集。\n对特征数据进行标准化处理（使用StandardScaler）。\n使用LinearRegression进行训练。\n在测试集上预测，并计算均方误差（MSE）和决定系数（R²）。\n输出模型的前5个预测值和对应的真实值。",
+      "answer": "from sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import mean_squared_error, r2_score\nimport pandas as pd\n\n# 1加载数据\nhousing = fetch_california_housing()\nX, y = housing.data, housing.target\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# 2数据标准化\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test) # 注意：测试集使用训练集的拟合参数进行转换\n\n# 3创建并训练模型\nlr_model = LinearRegression()\nlr_model.fit(X_train_scaled, y_train)\n\n# 4预测与评估\ny_pred = lr_model.predict(X_test_scaled)\nmse = mean_squared_error(y_test, y_pred)\nr2 = r2_score(y_test, y_pred)\nprint(f\"均方误差 (MSE): {mse:.4f}\")\nprint(f\"决定系数 (R²): {r2:.4f}\")\n\n# 5输出对比\ncomparison = pd.DataFrame({'实际值': y_test[:5], '预测值': y_pred[:5]})\nprint(\"\\n前5个样本的预测对比:\")\nprint(comparison)",
+      "type": "program"
+    },
+    {
+      "id": 4,
+      "title": "Apriori算法应用",
+      "question": "使用MLxtend库，对一个超市购物篮数据集进行关联规则挖掘。\n给定一个交易数据transactions（列表的列表，例如[['牛奶', '面包'], ['面包', '黄油']]）。\n使用Apriori算法找出最小支持度min_support=0.1下的所有频繁项集。\n基于找到的频繁项集，生成最小置信度min_threshold=0.5的关联规则。\n输出规则的前5条，包含前因、后果、支持度、置信度和提升度。",
+      "answer": "import pandas as pd\nfrom mlxtend.frequent_patterns import apriori, association_rules\nfrom mlxtend.preprocessing import TransactionEncoder\n\n# 示例数据\ntransactions = [\n    ['牛奶', '面包', '啤酒'],\n    ['牛奶', '面包', '尿布', '啤酒'],\n    ['牛奶', '尿布', '啤酒'],\n    ['面包', '黄油'],\n    ['面包', '尿布', '黄油']\n]\n\n# 1数据转换\nte = TransactionEncoder()\nte_ary = te.fit(transactions).transform(transactions)\ndf_encoded = pd.DataFrame(te_ary, columns=te.columns_)\nprint(\"编码后的交易数据:\")\nprint(df_encoded)\n\n# 2寻找频繁项集\nfrequent_itemsets = apriori(df_encoded, min_support=0.1, use_colnames=True)\nprint(f\"\\n频繁项集 (支持度>=0.1):\")\nprint(frequent_itemsets)\n\n# 3生成关联规则\nrules = association_rules(frequent_itemsets, metric=\"confidence\", min_threshold=0.5)\nprint(f\"\\n生成的关联规则 (置信度>=0.5):\")\n\n# 4输出指定列的前5条规则\nresult_columns = ['antecedents', 'consequents', 'support', 'confidence', 'lift']\nprint(rules[result_columns].head().round(3))",
+      "type": "program"
+    },
+    {
+      "id": 5,
+      "title": "K-Means聚类与肘部法则",
+      "question": "使用Scikit-learn对鸢尾花数据集进行K-Means聚类。\n不考虑标签，仅使用特征数据。\n使用肘部法则（绘制不同K值的SSE——簇内误差平方和曲线）来确定最佳聚类数量K（范围1-10）。\n根据肘部法则的结果，选择最佳K值，进行K-Means聚类。\n使用轮廓系数（Silhouette Score）评估聚类质量。\n将聚类结果与真实标签进行比较（可通过交叉表），观察聚类效果。",
+      "answer": "from sklearn.datasets import load_iris\nfrom sklearn.cluster import KMeans\nfrom sklearn.metrics import silhouette_score\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\n# 1加载数据\niris = load_iris()\nX = iris.data # 不使用标签y\n\n# 2肘部法则\nsse = []\nk_range = range(1, 11)\nfor k in k_range:\n    kmeans = KMeans(n_clusters=k, random_state=42)\n    kmeans.fit(X)\n    sse.append(kmeans.inertia_) # inertia_ 即 SSE\n\nplt.figure(figsize=(10, 6))\nplt.plot(k_range, sse, 'bo-')\nplt.xlabel('Number of clusters (K)')\nplt.ylabel('SSE')\nplt.title('Elbow Method For Optimal K')\nplt.grid(True)\nplt.show()\n\n# 3选择K值并进行聚类 (从图中看，肘部在K=2或3，这里选3)\noptimal_k = 3\nfinal_kmeans = KMeans(n_clusters=optimal_k, random_state=42)\ncluster_labels = final_kmeans.fit_predict(X)\n\n# 4轮廓系数评估\nsilhouette_avg = silhouette_score(X, cluster_labels)\nprint(f\"当K={optimal_k}时，轮廓系数为: {silhouette_avg:.4f}\")\n\n# 5与真实标签比较\ncomparison_df = pd.DataFrame({'真实标签': iris.target, '聚类结果': cluster_labels})\nct = pd.crosstab(comparison_df['真实标签'], comparison_df['聚类结果'])\nprint(\"\\n聚类结果与真实标签的交叉表:\")\nprint(ct)",
+      "type": "program"
+    },
+    {
+      "id": 6,
+      "title": "孤立森林异常检测",
+      "question": "使用Scikit-learn的IsolationForest对信用卡欺诈数据集（或其他包含异常点的数据集）进行异常检测。\n加载数据（例如使用sklearn.datasets.make_blobs生成包含噪声点的数据）。\n使用IsolationForest模型进行训练，设置contamination=0.1（异常比例估计值）和random_state=42。\n对数据进行预测，返回每个样本的标签（1表示正常，-1表示异常）。\n统计并输出被检测为异常的样本数量。\n可视化结果，在散点图上用不同颜色标记正常点和异常点。",
+      "answer": "from sklearn.ensemble import IsolationForest\nfrom sklearn.datasets import make_blobs\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# 1生成模拟数据（包含一些异常点）\nX, y_true = make_blobs(n_samples=300, centers=1, cluster_std=0.5, random_state=42)\n# 添加一些随机异常点\nrng = np.random.RandomState(42)\nX_outliers = rng.uniform(low=-6, high=6, size=(20, 2))\nX = np.vstack([X, X_outliers])\ny_true = np.hstack([y_true, -1 * np.ones(20)]) # 为异常点赋予标签-1\n\n# 2创建并训练模型\niso_forest = IsolationForest(contamination=0.1, random_state=42)\ny_pred = iso_forest.fit_predict(X) # 预测：1为正常，-1为异常\n\n# 3统计异常数量\nn_outliers_detected = (y_pred == -1).sum()\nprint(f\"检测到的异常样本数量: {n_outliers_detected}\")\n\n# 4可视化\nplt.figure(figsize=(10, 6))\n\n# 绘制正常点 (预测为1)\nb1 = plt.scatter(X[y_pred == 1, 0], X[y_pred == 1, 1], c='blue', edgecolor='k', s=20, label='预测正常点')\n# 绘制异常点 (预测为-1)\nb2 = plt.scatter(X[y_pred == -1, 0], X[y_pred == -1, 1], c='red', edgecolor='k', s=20, label='预测异常点')\n\nplt.legend()\nplt.title('孤立森林异常检测结果')\nplt.show()",
+      "type": "program"
+    },
+    {
+      "id": 7,
+      "title": "ARIMA模型预测",
+      "question": "使用statsmodels库对经典的时间序列数据集（如航空乘客数据AirPassengers.csv）进行ARIMA建模和预测。\n加载时间序列数据，将日期列设置为索引。\n将数据集拆分为训练集和测试集（例如，最后12个月作为测试集）。\n使用ARIMA模型对训练集进行拟合（例如，使用order=(1,1,1)）。\n对测试集进行预测。\n绘制原始数据、训练集拟合值和测试集预测值的图形。",
+      "answer": "import pandas as pd\nimport matplotlib.pyplot as plt\nfrom statsmodels.tsa.arima.model import ARIMA\nfrom sklearn.metrics import mean_squared_error\nimport warnings\nwarnings.filterwarnings('ignore')\n\n# 1加载数据\nurl = \"https://raw.githubusercontent.com/jbrownlee/Datasets/master/airline-passengers.csv\"\ndf = pd.read_csv(url)\ndf['Month'] = pd.to_datetime(df['Month'])\ndf.set_index('Month', inplace=True)\nts = df['Passengers']\n\n# 2划分训练集和测试集\ntrain_size = len(ts) - 12\ntrain, test = ts[:train_size], ts[train_size:]\n\n# 3拟合ARIMA模型\nmodel = ARIMA(train, order=(1, 1, 1)) # (p,d,q) 参数可以调整\nfitted_model = model.fit()\n\n# 4预测\nforecast_result = fitted_model.get_forecast(steps=len(test))\nforecast = forecast_result.predicted_mean\nconfidence_intervals = forecast_result.conf_int()\n\n# 5可视化\nplt.figure(figsize=(12, 6))\nplt.plot(train, label='训练数据')\nplt.plot(test, label='真实测试数据', color='gray')\nplt.plot(forecast, label='预测值', color='red')\nplt.fill_between(confidence_intervals.index,\n                 confidence_intervals.iloc[:, 0],\n                 confidence_intervals.iloc[:, 1], color='pink', alpha=0.3)\nplt.title('ARIMA模型预测航空乘客数量')\nplt.legend()\nplt.show()\n\n# 计算均方根误差\nmse = mean_squared_error(test, forecast)\nprint(f\"测试集上的均方根误差 (RMSE): {mse**0.5:.2f}\")",
+      "type": "program"
+    },
+    {
+      "id": 8,
+      "title": "使用TensorFlow/Keras构建CNN图像分类器",
+      "question": "使用TensorFlow和Keras构建一个简单的卷积神经网络（CNN）对Fashion-MNIST数据集进行分类。\n加载Fashion-MNIST数据集，并进行数据预处理（归一化、调整维度）。\n构建一个CNN模型，包含至少两个卷积层、池化层、Flatten层和全连接层。\n编译模型，使用合适的损失函数、优化器和评估指标。\n训练模型，设置epochs=5。\n在测试集上评估模型，输出准确率。",
+      "answer": "import tensorflow as tf\nfrom tensorflow.keras import datasets, layers, models\nimport matplotlib.pyplot as plt\n\n# 1加载与预处理数据\n(train_images, train_labels), (test_images, test_labels) = datasets.fashion_mnist.load_data()\n\n# 归一化像素值到 [0, 1]\ntrain_images, test_images = train_images / 255.0, test_images / 255.0\n\n# 为CNN调整数据维度 (样本数, 高度, 宽度, 通道数)\ntrain_images = train_images.reshape((train_images.shape[0], 28, 28, 1))\ntest_images = test_images.reshape((test_images.shape[0], 28, 28, 1))\n\n# 2构建CNN模型\nmodel = models.Sequential()\nmodel.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))\nmodel.add(layers.MaxPooling2D((2, 2)))\nmodel.add(layers.Conv2D(64, (3, 3), activation='relu'))\nmodel.add(layers.MaxPooling2D((2, 2)))\nmodel.add(layers.Flatten())\nmodel.add(layers.Dense(64, activation='relu'))\nmodel.add(layers.Dense(10, activation='softmax')) # 10个类别\n\n# 3编译模型\nmodel.compile(optimizer='adam',\n              loss='sparse_categorical_crossentropy',\n              metrics=['accuracy'])\n\n# 4训练模型\nhistory = model.fit(train_images, train_labels, epochs=5,\n                    validation_data=(test_images, test_labels))\n\n# 5评估模型\ntest_loss, test_acc = model.evaluate(test_images, test_labels, verbose=2)\nprint(f'\\n测试准确率: {test_acc:.4f}')",
+      "type": "program"
+    },
+    {
+      "id": 9,
+      "title": "使用TensorFlow/Keras构建RNN文本分类器",
+      "question": "使用TensorFlow和Keras构建一个循环神经网络（RNN），对IMDB电影评论数据集进行情感分类（二分类）。\n加载IMDB数据集，设置num_words=10000以保留前10000个最常出现的单词。\n对序列数据进行填充（padding），使它们具有相同的长度。\n构建一个Sequential模型，包含一个嵌入层（Embedding）、一个SimpleRNN层（或LSTM/GRU）和一个输出层。\n编译并训练模型，设置epochs=3。\n在测试集上评估模型性能。",
+      "answer": "import tensorflow as tf\nfrom tensorflow.keras.datasets import imdb\nfrom tensorflow.keras.preprocessing.sequence import pad_sequences\nfrom tensorflow.keras import models, layers\n\n# 1加载数据\nnum_words = 10000\n(train_data, train_labels), (test_data, test_labels) = imdb.load_data(num_words=num_words)\n\n# 2数据预处理：填充序列\nmaxlen = 500  # 将所有评论截断或填充为500个单词\ntrain_data = pad_sequences(train_data, maxlen=maxlen)\ntest_data = pad_sequences(test_data, maxlen=maxlen)\n\n# 3构建模型\nmodel = models.Sequential()\nmodel.add(layers.Embedding(input_dim=num_words, output_dim=32, input_length=maxlen))\nmodel.add(layers.SimpleRNN(32)) # 也可以使用LSTM或GRU，例如 layers.LSTM(32)\nmodel.add(layers.Dense(1, activation='sigmoid')) # 二分类，sigmoid输出\n\n# 4编译模型\nmodel.compile(optimizer='rmsprop',\n              loss='binary_crossentropy',\n              metrics=['accuracy'])\n\n# 5训练与评估\nhistory = model.fit(train_data, train_labels,\n                    epochs=3,\n                    batch_size=128,\n                    validation_split=0.2)\n\n# 在测试集上最终评估\ntest_loss, test_acc = model.evaluate(test_data, test_labels)\nprint(f'\\n测试准确率: {test_acc:.4f}')",
+      "type": "program"
+    },
+    {
+      "id": 10,
+      "title": "使用PySpark MLlib进行逻辑回归",
+      "question": "使用PySpark对乳腺癌数据集进行逻辑回归分类。\n初始化SparkSession。\n加载数据（可以从文件或Sklearn数据集转换）。\n使用VectorAssembler将所有特征列组合成一个特征向量列。\n划分训练集和测试集。\n使用LogisticRegression classifier进行训练。\n在测试集上进行预测，并计算准确率。",
+      "answer": "from pyspark.sql import SparkSession\nfrom pyspark.ml.feature import VectorAssembler\nfrom pyspark.ml.classification import LogisticRegression\nfrom pyspark.ml.evaluation import BinaryClassificationEvaluator\nfrom sklearn.datasets import load_breast_cancer\nimport pandas as pd\n\n# 1初始化Spark\nspark = SparkSession.builder.appName(\"LogisticRegressionExample\").getOrCreate()\n\n# 2加载数据 (这里使用Sklearn数据转换为Pandas，再转为Spark DataFrame)\ncancer_data = load_breast_cancer()\npdf = pd.DataFrame(cancer_data.data, columns=cancer_data.feature_names)\npdf['label'] = cancer_data.target\ndf = spark.createDataFrame(pdf)\n\n# 3特征组装\nfeature_columns = cancer_data.feature_names\nassembler = VectorAssembler(inputCols=feature_columns, outputCol=\"features\")\ndf_assembled = assembler.transform(df).select(\"features\", \"label\")\n\n# 4划分数据集\ntrain_df, test_df = df_assembled.randomSplit([0.7, 0.3], seed=42)\n\n# 5创建并训练模型\nlr = LogisticRegression(featuresCol=\"features\", labelCol=\"label\")\nlr_model = lr.fit(train_df)\n\n# 6预测与评估\npredictions = lr_model.transform(test_df)\nevaluator = BinaryClassificationEvaluator(labelCol=\"label\", rawPredictionCol=\"rawPrediction\")\naccuracy = predictions.filter(predictions.label == predictions.prediction).count() / float(predictions.count())\nauc = evaluator.evaluate(predictions)\n\nprint(f\"测试集准确率: {accuracy:.4f}\")\nprint(f\"测试集AUC: {auc:.4f}\")\n\n# 停止Spark会话\nspark.stop()\n\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom prophet import Prophet\n\n# 1加载数据\nurl = \"https://raw.githubusercontent.com/jbrownlee/Datasets/master/airline-passengers.csv\"\ndf = pd.read_csv(url)\n\n# 2整理数据格式\ndf['Month'] = pd.to_datetime(df['Month'])\ndf = df.rename(columns={'Month': 'ds', 'Passengers': 'y'})\nprint(df.head())\n\n# 3创建并训练模型\nmodel = Prophet(seasonality_mode='multiplicative', yearly_seasonality=True)\nmodel.add_seasonality(name='monthly', period=30.5, fourier_order=5)\nmodel.fit(df)\n\n# 4创建未来数据框并预测\nfuture = model.make_future_dataframe(periods=12, freq='M')\nforecast = model.predict(future)\n\n# 5绘图\n# 预测结果图\nfig1 = model.plot(forecast)\nplt.title('Prophet - 航空乘客预测')\nplt.show()\n\n# 成分分解图\nfig2 = model.plot_components(forecast)\nplt.show()\n\n# 显示预测结果的关键列\nprint(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail())",
+      "type": "program"
+    },
+    {
+      "id": 11,
+      "title": "特征选择与降维",
+      "question": "使用Scikit-learn对威斯康星州乳腺癌数据集进行特征工程。\n加载数据并划分训练集和测试集。\n使用SelectKBest和f_classif（方差分析）方法选择最重要的10个特征。\n使用PCA（主成分分析）将原始数据降维至2维。\n分别使用原始特征、选择后的特征和PCA降维后的特征训练一个逻辑回归模型。\n比较三种特征处理方法在测试集上的准确率和训练时间。",
+      "answer": "from sklearn.datasets import load_breast_cancer\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.feature_selection import SelectKBest, f_classif\nfrom sklearn.decomposition import PCA\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.metrics import accuracy_score\nimport time\n\n# 1加载数据\ndata = load_breast_cancer()\nX, y = data.data, data.target\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# 2特征选择 - SelectKBest\nselector = SelectKBest(score_func=f_classif, k=10)\nX_train_selected = selector.fit_transform(X_train, y_train)\nX_test_selected = selector.transform(X_test)\nprint(f\"原始特征数: {X.shape[1]}, 选择后特征数: {X_train_selected.shape[1]}\")\n\n# 3特征降维 - PCA\npca = PCA(n_components=2)\nX_train_pca = pca.fit_transform(X_train)\nX_test_pca = pca.transform(X_test)\nprint(f\"PCA降维后特征数: {X_train_pca.shape[1]}\")\nprint(f\"PCA解释方差比: {pca.explained_variance_ratio_.sum():.3f}\")\n\n# 4比较不同特征集的效果\nlr = LogisticRegression(random_state=42, max_iter=1000)\nfeature_sets = {\n    '原始特征': (X_train, X_test),\n    '选择特征': (X_train_selected, X_test_selected),\n    'PCA特征': (X_train_pca, X_test_pca)\n}\n\nresults = {}\nfor name, (X_tr, X_te) in feature_sets.items():\n    start_time = time.time()\n    lr.fit(X_tr, y_train)\n    train_time = time.time() - start_time\n    y_pred = lr.predict(X_te)\n    acc = accuracy_score(y_test, y_pred)\n    results[name] = {'accuracy': acc, 'train_time': train_time}\nprint(f\"{name}: 准确率={acc:.4f}, 训练时间={train_time:.4f}s\")",
+      "type": "program"
+    },
+    {
+      "id": 12,
+      "title": "投票分类器",
+      "question": "构建一个投票分类器，结合逻辑回归、随机森林和支持向量机。\n加载威斯康星州乳腺癌数据集。\n创建三个基分类器：LogisticRegression、RandomForestClassifier和SVC（设置probability=True）。\n使用VotingClassifier构建软投票集成模型。\n分别评估每个基分类器和投票分类器在测试集上的准确率。\n比较集成模型与单个模型的性能。",
+      "answer": "from sklearn.datasets import load_breast_cancer\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.ensemble import RandomForestClassifier, VotingClassifier\nfrom sklearn.svm import SVC\nfrom sklearn.metrics import accuracy_score\n\n# 1加载数据\ndata = load_breast_cancer()\nX, y = data.data, data.target\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# 2创建基分类器\nlr = LogisticRegression(random_state=42, max_iter=1000)\nrf = RandomForestClassifier(n_estimators=100, random_state=42)\nsvc = SVC(probability=True, random_state=42)  # 软投票需要probability=True\n\n# 3创建投票分类器\nvoting_clf = VotingClassifier(\n    estimators=[('lr', lr), ('rf', rf), ('svc', svc)],\n    voting='soft'  # 软投票\n)\n\n# 4训练并评估所有分类器\nclassifiers = [lr, rf, svc, voting_clf]\nclassifier_names = ['Logistic Regression', 'Random Forest', 'SVM', 'Voting Classifier']\n\nfor name, clf in zip(classifier_names, classifiers):\n    clf.fit(X_train, y_train)\n    y_pred = clf.predict(X_test)\n    accuracy = accuracy_score(y_test, y_pred)\nprint(f\"{name}: {accuracy:.4f}\")",
+      "type": "program"
+    },
+    {
+      "id": 13,
+      "title": "DBSCAN聚类",
+      "question": "使用DBSCAN算法对复杂形状的数据进行聚类，并与K-Means进行比较。\n使用make_moons生成包含300个样本的数据集，添加一些噪声。\n分别使用K-Means（K=2）和DBSCAN（eps=0.2, min_samples=5）进行聚类。\n可视化两种算法的聚类结果。\n计算并比较两种算法的轮廓系数。\n分析哪种算法更适合此类数据及原因。",
+      "answer": "from sklearn.datasets import make_moons\nfrom sklearn.cluster import KMeans, DBSCAN\nfrom sklearn.metrics import silhouette_score\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# 1生成数据\nX, y_true = make_moons(n_samples=300, noise=0.1, random_state=42)\n\n# 2应用聚类算法\n# K-Means\nkmeans = KMeans(n_clusters=2, random_state=42)\ny_kmeans = kmeans.fit_predict(X)\n\n# DBSCAN\ndbscan = DBSCAN(eps=0.2, min_samples=5)\ny_dbscan = dbscan.fit_predict(X)\n\n# 3可视化\nfig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))\n\n# K-Means结果\nax1.scatter(X[:, 0], X[:, 1], c=y_kmeans, cmap='viridis', s=50)\nax1.set_title('K-Means Clustering')\nax1.set_xlabel('Feature 1')\nax1.set_ylabel('Feature 2')\n\n# DBSCAN结果\nunique_labels = np.unique(y_dbscan)\ncolors = plt.cm.Spectral(np.linspace(0, 1, len(unique_labels)))\nfor k, col in zip(unique_labels, colors):\n    if k == -1:\n        col = 'k'  # 黑色表示噪声\n    class_member_mask = (y_dbscan == k)\n    xy = X[class_member_mask]\n    ax2.scatter(xy[:, 0], xy[:, 1], c=[col], s=50)\nax2.set_title('DBSCAN Clustering')\nax2.set_xlabel('Feature 1')\nax2.set_ylabel('Feature 2')\n\nplt.tight_layout()\nplt.show()\n\n# 4评估\nkmeans_silhouette = silhouette_score(X, y_kmeans)\ndbscan_silhouette = silhouette_score(X[y_dbscan != -1], y_dbscan[y_dbscan != -1])  # 排除噪声点\n\nprint(f\"K-Means轮廓系数: {kmeans_silhouette:.4f}\")\nprint(f\"DBSCAN轮廓系数: {dbscan_silhouette:.4f}\")\nprint(f\"DBSCAN发现的簇数量: {len(np.unique(y_dbscan)) - (1 if -1 in y_dbscan else 0)}\")\nprint(f\"DBSCAN噪声点数量: {np.sum(y_dbscan == -1)}\")\n\n# 5分析：DBSCAN能发现任意形状的簇且能识别噪声，更适合此类数据",
+      "type": "program"
+    },
+    {
+      "id": 14,
+      "title": "Facebook Prophet预测",
+      "question": "使用Facebook Prophet库对时间序列数据进行预测。\n加载航空乘客数据，确保日期列为datetime类型。\n将数据整理成Prophet要求的格式（ds日期列和y数值列）。\n创建Prophet模型，添加年度季节性成分。\n创建未来12个月的数据框并进行预测。\n绘制预测结果图和各成分分解图。",
+      "answer": "import pandas as pd\nimport matplotlib.pyplot as plt\nfrom prophet import Prophet\n\n# 1加载数据\nurl = \"https://raw.githubusercontent.com/jbrownlee/Datasets/master/airline-passengers.csv\"\ndf = pd.read_csv(url)\n\n# 2. 整理数据格式\ndf['Month'] = pd.to_datetime(df['Month'])\ndf = df.rename(columns={'Month': 'ds', 'Passengers': 'y'})\nprint(df.head())\n\n# 3创建并训练模型\nmodel = Prophet(seasonality_mode='multiplicative', yearly_seasonality=True)\nmodel.add_seasonality(name='monthly', period=30.5, fourier_order=5)\nmodel.fit(df)\n\n# 4创建未来数据框并预测\nfuture = model.make_future_dataframe(periods=12, freq='M')\nforecast = model.predict(future)\n\n# 5绘图\n# 预测结果图\nfig1 = model.plot(forecast)\nplt.title('Prophet - 航空乘客预测')\nplt.show()\n\n# 成分分解图\nfig2 = model.plot_components(forecast)\nplt.show()\n\n# 显示预测结果的关键列\nprint(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail())",
+      "type": "program"
+    },
+    {
+      "id": 15,
+      "title": "局部离群因子检测",
+      "question": "使用局部离群因子算法检测二维数据集中的异常点。\n生成一个包含两个正态分布簇和一些随机异常点的数据集。\n使用LocalOutlierFactor算法进行异常检测，设置n_neighbors=20。\n计算每个样本的LOF得分（负值越大越可能是异常）。\n可视化结果，用不同颜色和大小表示正常点和异常点。\n通过决策函数找出前5个最异常的样本。",
+      "answer": "from sklearn.neighbors import LocalOutlierFactor\nfrom sklearn.datasets import make_blobs\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# 1生成数据\nX, y_true = make_blobs(n_samples=300, centers=2, cluster_std=0.8, random_state=42)\n# 添加异常点\nrng = np.random.RandomState(42)\nX_outliers = rng.uniform(low=-8, high=8, size=(10, 2))\nX = np.vstack([X, X_outliers])\n\n# 2. 使用LOF进行异常检测\nlof = LocalOutlierFactor(n_neighbors=20, contamination=0.03)\ny_pred = lof.fit_predict(X)  # 1为正常，-1为异常\nlof_scores = -lof.negative_outlier_factor_  # LOF得分\n\n# 3可视化\nplt.figure(figsize=(12, 6))\n\n# 绘制正常点\nnormal_mask = (y_pred == 1)\nplt.scatter(X[normal_mask, 0], X[normal_mask, 1], \n           c=lof_scores[normal_mask], cmap='viridis', \n           s=50, edgecolor='k', label='正常点')\n\n# 绘制异常点\noutlier_mask = (y_pred == -1)\nplt.scatter(X[outlier_mask, 0], X[outlier_mask, 1], \n           c=lof_scores[outlier_mask], cmap='viridis', \n           s=200, edgecolor='r', linewidth=2, marker='*', label='异常点')\n\nplt.colorbar(label='LOF Score')\nplt.legend()\nplt.title('局部离群因子检测')\nplt.xlabel('Feature 1')\nplt.ylabel('Feature 2')\nplt.show()\n\n# 4找出最异常的5个样本\ntop_5_outlier_indices = np.argsort(lof_scores)[-5:][::-1]\nprint(\"前5个最异常样本的索引和得分:\")\nfor i, idx in enumerate(top_5_outlier_indices):\n    print(f\"第{i+1}名: 索引={idx}, LOF得分={lof_scores[idx]:.4f}, 坐标=({X[idx, 0]:.2f}, {X[idx, 1]:.2f})\")",
+      "type": "program"
+    }
+  ]
+}

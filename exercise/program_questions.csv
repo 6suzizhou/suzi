@@ -1,0 +1,653 @@
+﻿id,title,question,answer,type
+1,决策树实现与可视化,"使用Scikit-learn库，在鸢尾花（Iris）数据集上构建一个决策树分类器。要求：
+加载数据并按7:3的比例划分训练集和测试集。使用DecisionTreeClassifier进行训练，并设置max_depth=3和random_state=42。在测试集上进行预测，并输出模型的准确率、精确率、召回率和F1-score（宏平均）。（选做）使用plot_tree函数将训练好的决策树可视化。","# 1导入库和数据
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier, plot_tree
+from sklearn.metrics import accuracy_score, classification_report
+import matplotlib.pyplot as plt
+
+iris = load_iris()
+X, y = iris.data, iris.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# 2创建并训练模型
+dt_clf = DecisionTreeClassifier(max_depth=3, random_state=42)
+dt_clf.fit(X_train, y_train)
+
+# 3预测与评估
+y_pred = dt_clf.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f""准确率 (Accuracy): {accuracy:.4f}"")
+print(""\n分类报告 (Classification Report):"")
+print(classification_report(y_test, y_pred, target_names=iris.target_names))
+
+# 4（选做）可视化
+plt.figure(figsize=(12, 8))
+plot_tree(dt_clf, feature_names=iris.feature_names, class_names=iris.target_names, filled=True)
+plt.title(""决策树可视化"")
+plt.show()",program
+2,集成学习模型比较,"使用Scikit-learn，在威斯康星州乳腺癌数据集上比较随机森林（Random Forest）和梯度提升树（Gradient Boosting）的性能。
+加载数据load_breast_cancer()，并进行训练/测试集划分。
+分别使用RandomForestClassifier和GradientBoostingClassifier，均设置n_estimators=100和random_state=42。
+分别对两个模型进行训练和预测。
+输出两个模型在测试集上的准确率和AUC值。
+简要说明哪个模型在此数据集上表现更好，并分析可能的原因。","from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.metrics import accuracy_score, roc_auc_score
+
+# 1加载数据
+data = load_breast_cancer()
+X, y = data.data, data.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
+# 2初始化模型
+rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)
+gb_clf = GradientBoostingClassifier(n_estimators=100, random_state=42)
+
+# 3训练与预测
+models = {'Random Forest': rf_clf, 'Gradient Boosting': gb_clf}
+for name, model in models.items():
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    y_pred_proba = model.predict_proba(X_test)[:, 1] # 用于计算AUC
+    acc = accuracy_score(y_test, y_pred)
+    auc = roc_auc_score(y_test, y_pred_proba)
+    print(f""{name} - 准确率: {acc:.4f}, AUC: {auc:.4f}"")
+
+# 4分析：通常GBDT的准确率可能略高，但RF训练更快。具体结果取决于数据划分和参数。原因可能包括：GBDT通过串行学习不断修正错误，可能构建更精确的模型；RF通过降低方差提高泛化能力。",program
+3,线性回归与性能评估,"使用Scikit-learn的波士顿房价数据集（或加州住房数据集fetch_california_housing），建立一个线性回归模型来预测房价。
+加载数据，划分训练集和测试集。
+对特征数据进行标准化处理（使用StandardScaler）。
+使用LinearRegression进行训练。
+在测试集上预测，并计算均方误差（MSE）和决定系数（R²）。
+输出模型的前5个预测值和对应的真实值。","from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+import pandas as pd
+
+# 1加载数据
+housing = fetch_california_housing()
+X, y = housing.data, housing.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# 2数据标准化
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test) # 注意：测试集使用训练集的拟合参数进行转换
+
+# 3创建并训练模型
+lr_model = LinearRegression()
+lr_model.fit(X_train_scaled, y_train)
+
+# 4预测与评估
+y_pred = lr_model.predict(X_test_scaled)
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+print(f""均方误差 (MSE): {mse:.4f}"")
+print(f""决定系数 (R²): {r2:.4f}"")
+
+# 5输出对比
+comparison = pd.DataFrame({'实际值': y_test[:5], '预测值': y_pred[:5]})
+print(""\n前5个样本的预测对比:"")
+print(comparison)",program
+4,Apriori算法应用,"使用MLxtend库，对一个超市购物篮数据集进行关联规则挖掘。
+给定一个交易数据transactions（列表的列表，例如[['牛奶', '面包'], ['面包', '黄油']]）。
+使用Apriori算法找出最小支持度min_support=0.1下的所有频繁项集。
+基于找到的频繁项集，生成最小置信度min_threshold=0.5的关联规则。
+输出规则的前5条，包含前因、后果、支持度、置信度和提升度。","import pandas as pd
+from mlxtend.frequent_patterns import apriori, association_rules
+from mlxtend.preprocessing import TransactionEncoder
+
+# 示例数据
+transactions = [
+    ['牛奶', '面包', '啤酒'],
+    ['牛奶', '面包', '尿布', '啤酒'],
+    ['牛奶', '尿布', '啤酒'],
+    ['面包', '黄油'],
+    ['面包', '尿布', '黄油']
+]
+
+# 1数据转换
+te = TransactionEncoder()
+te_ary = te.fit(transactions).transform(transactions)
+df_encoded = pd.DataFrame(te_ary, columns=te.columns_)
+print(""编码后的交易数据:"")
+print(df_encoded)
+
+# 2寻找频繁项集
+frequent_itemsets = apriori(df_encoded, min_support=0.1, use_colnames=True)
+print(f""\n频繁项集 (支持度>=0.1):"")
+print(frequent_itemsets)
+
+# 3生成关联规则
+rules = association_rules(frequent_itemsets, metric=""confidence"", min_threshold=0.5)
+print(f""\n生成的关联规则 (置信度>=0.5):"")
+
+# 4输出指定列的前5条规则
+result_columns = ['antecedents', 'consequents', 'support', 'confidence', 'lift']
+print(rules[result_columns].head().round(3))",program
+5,K-Means聚类与肘部法则,"使用Scikit-learn对鸢尾花数据集进行K-Means聚类。
+不考虑标签，仅使用特征数据。
+使用肘部法则（绘制不同K值的SSE——簇内误差平方和曲线）来确定最佳聚类数量K（范围1-10）。
+根据肘部法则的结果，选择最佳K值，进行K-Means聚类。
+使用轮廓系数（Silhouette Score）评估聚类质量。
+将聚类结果与真实标签进行比较（可通过交叉表），观察聚类效果。","from sklearn.datasets import load_iris
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# 1加载数据
+iris = load_iris()
+X = iris.data # 不使用标签y
+
+# 2肘部法则
+sse = []
+k_range = range(1, 11)
+for k in k_range:
+    kmeans = KMeans(n_clusters=k, random_state=42)
+    kmeans.fit(X)
+    sse.append(kmeans.inertia_) # inertia_ 即 SSE
+
+plt.figure(figsize=(10, 6))
+plt.plot(k_range, sse, 'bo-')
+plt.xlabel('Number of clusters (K)')
+plt.ylabel('SSE')
+plt.title('Elbow Method For Optimal K')
+plt.grid(True)
+plt.show()
+
+# 3选择K值并进行聚类 (从图中看，肘部在K=2或3，这里选3)
+optimal_k = 3
+final_kmeans = KMeans(n_clusters=optimal_k, random_state=42)
+cluster_labels = final_kmeans.fit_predict(X)
+
+# 4轮廓系数评估
+silhouette_avg = silhouette_score(X, cluster_labels)
+print(f""当K={optimal_k}时，轮廓系数为: {silhouette_avg:.4f}"")
+
+# 5与真实标签比较
+comparison_df = pd.DataFrame({'真实标签': iris.target, '聚类结果': cluster_labels})
+ct = pd.crosstab(comparison_df['真实标签'], comparison_df['聚类结果'])
+print(""\n聚类结果与真实标签的交叉表:"")
+print(ct)",program
+6,孤立森林异常检测,"使用Scikit-learn的IsolationForest对信用卡欺诈数据集（或其他包含异常点的数据集）进行异常检测。
+加载数据（例如使用sklearn.datasets.make_blobs生成包含噪声点的数据）。
+使用IsolationForest模型进行训练，设置contamination=0.1（异常比例估计值）和random_state=42。
+对数据进行预测，返回每个样本的标签（1表示正常，-1表示异常）。
+统计并输出被检测为异常的样本数量。
+可视化结果，在散点图上用不同颜色标记正常点和异常点。","from sklearn.ensemble import IsolationForest
+from sklearn.datasets import make_blobs
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 1生成模拟数据（包含一些异常点）
+X, y_true = make_blobs(n_samples=300, centers=1, cluster_std=0.5, random_state=42)
+# 添加一些随机异常点
+rng = np.random.RandomState(42)
+X_outliers = rng.uniform(low=-6, high=6, size=(20, 2))
+X = np.vstack([X, X_outliers])
+y_true = np.hstack([y_true, -1 * np.ones(20)]) # 为异常点赋予标签-1
+
+# 2创建并训练模型
+iso_forest = IsolationForest(contamination=0.1, random_state=42)
+y_pred = iso_forest.fit_predict(X) # 预测：1为正常，-1为异常
+
+# 3统计异常数量
+n_outliers_detected = (y_pred == -1).sum()
+print(f""检测到的异常样本数量: {n_outliers_detected}"")
+
+# 4可视化
+plt.figure(figsize=(10, 6))
+
+# 绘制正常点 (预测为1)
+b1 = plt.scatter(X[y_pred == 1, 0], X[y_pred == 1, 1], c='blue', edgecolor='k', s=20, label='预测正常点')
+# 绘制异常点 (预测为-1)
+b2 = plt.scatter(X[y_pred == -1, 0], X[y_pred == -1, 1], c='red', edgecolor='k', s=20, label='预测异常点')
+
+plt.legend()
+plt.title('孤立森林异常检测结果')
+plt.show()",program
+7,ARIMA模型预测,"使用statsmodels库对经典的时间序列数据集（如航空乘客数据AirPassengers.csv）进行ARIMA建模和预测。
+加载时间序列数据，将日期列设置为索引。
+将数据集拆分为训练集和测试集（例如，最后12个月作为测试集）。
+使用ARIMA模型对训练集进行拟合（例如，使用order=(1,1,1)）。
+对测试集进行预测。
+绘制原始数据、训练集拟合值和测试集预测值的图形。","import pandas as pd
+import matplotlib.pyplot as plt
+from statsmodels.tsa.arima.model import ARIMA
+from sklearn.metrics import mean_squared_error
+import warnings
+warnings.filterwarnings('ignore')
+
+# 1加载数据
+url = ""https://raw.githubusercontent.com/jbrownlee/Datasets/master/airline-passengers.csv""
+df = pd.read_csv(url)
+df['Month'] = pd.to_datetime(df['Month'])
+df.set_index('Month', inplace=True)
+ts = df['Passengers']
+
+# 2划分训练集和测试集
+train_size = len(ts) - 12
+train, test = ts[:train_size], ts[train_size:]
+
+# 3拟合ARIMA模型
+model = ARIMA(train, order=(1, 1, 1)) # (p,d,q) 参数可以调整
+fitted_model = model.fit()
+
+# 4预测
+forecast_result = fitted_model.get_forecast(steps=len(test))
+forecast = forecast_result.predicted_mean
+confidence_intervals = forecast_result.conf_int()
+
+# 5可视化
+plt.figure(figsize=(12, 6))
+plt.plot(train, label='训练数据')
+plt.plot(test, label='真实测试数据', color='gray')
+plt.plot(forecast, label='预测值', color='red')
+plt.fill_between(confidence_intervals.index,
+                 confidence_intervals.iloc[:, 0],
+                 confidence_intervals.iloc[:, 1], color='pink', alpha=0.3)
+plt.title('ARIMA模型预测航空乘客数量')
+plt.legend()
+plt.show()
+
+# 计算均方根误差
+mse = mean_squared_error(test, forecast)
+print(f""测试集上的均方根误差 (RMSE): {mse**0.5:.2f}"")",program
+8,使用TensorFlow/Keras构建CNN图像分类器,"使用TensorFlow和Keras构建一个简单的卷积神经网络（CNN）对Fashion-MNIST数据集进行分类。
+加载Fashion-MNIST数据集，并进行数据预处理（归一化、调整维度）。
+构建一个CNN模型，包含至少两个卷积层、池化层、Flatten层和全连接层。
+编译模型，使用合适的损失函数、优化器和评估指标。
+训练模型，设置epochs=5。
+在测试集上评估模型，输出准确率。","import tensorflow as tf
+from tensorflow.keras import datasets, layers, models
+import matplotlib.pyplot as plt
+
+# 1加载与预处理数据
+(train_images, train_labels), (test_images, test_labels) = datasets.fashion_mnist.load_data()
+
+# 归一化像素值到 [0, 1]
+train_images, test_images = train_images / 255.0, test_images / 255.0
+
+# 为CNN调整数据维度 (样本数, 高度, 宽度, 通道数)
+train_images = train_images.reshape((train_images.shape[0], 28, 28, 1))
+test_images = test_images.reshape((test_images.shape[0], 28, 28, 1))
+
+# 2构建CNN模型
+model = models.Sequential()
+model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Flatten())
+model.add(layers.Dense(64, activation='relu'))
+model.add(layers.Dense(10, activation='softmax')) # 10个类别
+
+# 3编译模型
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+
+# 4训练模型
+history = model.fit(train_images, train_labels, epochs=5,
+                    validation_data=(test_images, test_labels))
+
+# 5评估模型
+test_loss, test_acc = model.evaluate(test_images, test_labels, verbose=2)
+print(f'\n测试准确率: {test_acc:.4f}')",program
+9,使用TensorFlow/Keras构建RNN文本分类器,"使用TensorFlow和Keras构建一个循环神经网络（RNN），对IMDB电影评论数据集进行情感分类（二分类）。
+加载IMDB数据集，设置num_words=10000以保留前10000个最常出现的单词。
+对序列数据进行填充（padding），使它们具有相同的长度。
+构建一个Sequential模型，包含一个嵌入层（Embedding）、一个SimpleRNN层（或LSTM/GRU）和一个输出层。
+编译并训练模型，设置epochs=3。
+在测试集上评估模型性能。","import tensorflow as tf
+from tensorflow.keras.datasets import imdb
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras import models, layers
+
+# 1加载数据
+num_words = 10000
+(train_data, train_labels), (test_data, test_labels) = imdb.load_data(num_words=num_words)
+
+# 2数据预处理：填充序列
+maxlen = 500  # 将所有评论截断或填充为500个单词
+train_data = pad_sequences(train_data, maxlen=maxlen)
+test_data = pad_sequences(test_data, maxlen=maxlen)
+
+# 3构建模型
+model = models.Sequential()
+model.add(layers.Embedding(input_dim=num_words, output_dim=32, input_length=maxlen))
+model.add(layers.SimpleRNN(32)) # 也可以使用LSTM或GRU，例如 layers.LSTM(32)
+model.add(layers.Dense(1, activation='sigmoid')) # 二分类，sigmoid输出
+
+# 4编译模型
+model.compile(optimizer='rmsprop',
+              loss='binary_crossentropy',
+              metrics=['accuracy'])
+
+# 5训练与评估
+history = model.fit(train_data, train_labels,
+                    epochs=3,
+                    batch_size=128,
+                    validation_split=0.2)
+
+# 在测试集上最终评估
+test_loss, test_acc = model.evaluate(test_data, test_labels)
+print(f'\n测试准确率: {test_acc:.4f}')",program
+10,使用PySpark MLlib进行逻辑回归,"使用PySpark对乳腺癌数据集进行逻辑回归分类。
+初始化SparkSession。
+加载数据（可以从文件或Sklearn数据集转换）。
+使用VectorAssembler将所有特征列组合成一个特征向量列。
+划分训练集和测试集。
+使用LogisticRegression classifier进行训练。
+在测试集上进行预测，并计算准确率。","from pyspark.sql import SparkSession
+from pyspark.ml.feature import VectorAssembler
+from pyspark.ml.classification import LogisticRegression
+from pyspark.ml.evaluation import BinaryClassificationEvaluator
+from sklearn.datasets import load_breast_cancer
+import pandas as pd
+
+# 1初始化Spark
+spark = SparkSession.builder.appName(""LogisticRegressionExample"").getOrCreate()
+
+# 2加载数据 (这里使用Sklearn数据转换为Pandas，再转为Spark DataFrame)
+cancer_data = load_breast_cancer()
+pdf = pd.DataFrame(cancer_data.data, columns=cancer_data.feature_names)
+pdf['label'] = cancer_data.target
+df = spark.createDataFrame(pdf)
+
+# 3特征组装
+feature_columns = cancer_data.feature_names
+assembler = VectorAssembler(inputCols=feature_columns, outputCol=""features"")
+df_assembled = assembler.transform(df).select(""features"", ""label"")
+
+# 4划分数据集
+train_df, test_df = df_assembled.randomSplit([0.7, 0.3], seed=42)
+
+# 5创建并训练模型
+lr = LogisticRegression(featuresCol=""features"", labelCol=""label"")
+lr_model = lr.fit(train_df)
+
+# 6预测与评估
+predictions = lr_model.transform(test_df)
+evaluator = BinaryClassificationEvaluator(labelCol=""label"", rawPredictionCol=""rawPrediction"")
+accuracy = predictions.filter(predictions.label == predictions.prediction).count() / float(predictions.count())
+auc = evaluator.evaluate(predictions)
+
+print(f""测试集准确率: {accuracy:.4f}"")
+print(f""测试集AUC: {auc:.4f}"")
+
+# 停止Spark会话
+spark.stop()
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+from prophet import Prophet
+
+# 1加载数据
+url = ""https://raw.githubusercontent.com/jbrownlee/Datasets/master/airline-passengers.csv""
+df = pd.read_csv(url)
+
+# 2整理数据格式
+df['Month'] = pd.to_datetime(df['Month'])
+df = df.rename(columns={'Month': 'ds', 'Passengers': 'y'})
+print(df.head())
+
+# 3创建并训练模型
+model = Prophet(seasonality_mode='multiplicative', yearly_seasonality=True)
+model.add_seasonality(name='monthly', period=30.5, fourier_order=5)
+model.fit(df)
+
+# 4创建未来数据框并预测
+future = model.make_future_dataframe(periods=12, freq='M')
+forecast = model.predict(future)
+
+# 5绘图
+# 预测结果图
+fig1 = model.plot(forecast)
+plt.title('Prophet - 航空乘客预测')
+plt.show()
+
+# 成分分解图
+fig2 = model.plot_components(forecast)
+plt.show()
+
+# 显示预测结果的关键列
+print(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail())",program
+11,特征选择与降维,"使用Scikit-learn对威斯康星州乳腺癌数据集进行特征工程。
+加载数据并划分训练集和测试集。
+使用SelectKBest和f_classif（方差分析）方法选择最重要的10个特征。
+使用PCA（主成分分析）将原始数据降维至2维。
+分别使用原始特征、选择后的特征和PCA降维后的特征训练一个逻辑回归模型。
+比较三种特征处理方法在测试集上的准确率和训练时间。","from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split
+from sklearn.feature_selection import SelectKBest, f_classif
+from sklearn.decomposition import PCA
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+import time
+
+# 1加载数据
+data = load_breast_cancer()
+X, y = data.data, data.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# 2特征选择 - SelectKBest
+selector = SelectKBest(score_func=f_classif, k=10)
+X_train_selected = selector.fit_transform(X_train, y_train)
+X_test_selected = selector.transform(X_test)
+print(f""原始特征数: {X.shape[1]}, 选择后特征数: {X_train_selected.shape[1]}"")
+
+# 3特征降维 - PCA
+pca = PCA(n_components=2)
+X_train_pca = pca.fit_transform(X_train)
+X_test_pca = pca.transform(X_test)
+print(f""PCA降维后特征数: {X_train_pca.shape[1]}"")
+print(f""PCA解释方差比: {pca.explained_variance_ratio_.sum():.3f}"")
+
+# 4比较不同特征集的效果
+lr = LogisticRegression(random_state=42, max_iter=1000)
+feature_sets = {
+    '原始特征': (X_train, X_test),
+    '选择特征': (X_train_selected, X_test_selected),
+    'PCA特征': (X_train_pca, X_test_pca)
+}
+
+results = {}
+for name, (X_tr, X_te) in feature_sets.items():
+    start_time = time.time()
+    lr.fit(X_tr, y_train)
+    train_time = time.time() - start_time
+    y_pred = lr.predict(X_te)
+    acc = accuracy_score(y_test, y_pred)
+    results[name] = {'accuracy': acc, 'train_time': train_time}
+print(f""{name}: 准确率={acc:.4f}, 训练时间={train_time:.4f}s"")",program
+12,投票分类器,"构建一个投票分类器，结合逻辑回归、随机森林和支持向量机。
+加载威斯康星州乳腺癌数据集。
+创建三个基分类器：LogisticRegression、RandomForestClassifier和SVC（设置probability=True）。
+使用VotingClassifier构建软投票集成模型。
+分别评估每个基分类器和投票分类器在测试集上的准确率。
+比较集成模型与单个模型的性能。","from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier, VotingClassifier
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
+
+# 1加载数据
+data = load_breast_cancer()
+X, y = data.data, data.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# 2创建基分类器
+lr = LogisticRegression(random_state=42, max_iter=1000)
+rf = RandomForestClassifier(n_estimators=100, random_state=42)
+svc = SVC(probability=True, random_state=42)  # 软投票需要probability=True
+
+# 3创建投票分类器
+voting_clf = VotingClassifier(
+    estimators=[('lr', lr), ('rf', rf), ('svc', svc)],
+    voting='soft'  # 软投票
+)
+
+# 4训练并评估所有分类器
+classifiers = [lr, rf, svc, voting_clf]
+classifier_names = ['Logistic Regression', 'Random Forest', 'SVM', 'Voting Classifier']
+
+for name, clf in zip(classifier_names, classifiers):
+    clf.fit(X_train, y_train)
+    y_pred = clf.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+print(f""{name}: {accuracy:.4f}"")",program
+13,DBSCAN聚类,"使用DBSCAN算法对复杂形状的数据进行聚类，并与K-Means进行比较。
+使用make_moons生成包含300个样本的数据集，添加一些噪声。
+分别使用K-Means（K=2）和DBSCAN（eps=0.2, min_samples=5）进行聚类。
+可视化两种算法的聚类结果。
+计算并比较两种算法的轮廓系数。
+分析哪种算法更适合此类数据及原因。","from sklearn.datasets import make_moons
+from sklearn.cluster import KMeans, DBSCAN
+from sklearn.metrics import silhouette_score
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 1生成数据
+X, y_true = make_moons(n_samples=300, noise=0.1, random_state=42)
+
+# 2应用聚类算法
+# K-Means
+kmeans = KMeans(n_clusters=2, random_state=42)
+y_kmeans = kmeans.fit_predict(X)
+
+# DBSCAN
+dbscan = DBSCAN(eps=0.2, min_samples=5)
+y_dbscan = dbscan.fit_predict(X)
+
+# 3可视化
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+# K-Means结果
+ax1.scatter(X[:, 0], X[:, 1], c=y_kmeans, cmap='viridis', s=50)
+ax1.set_title('K-Means Clustering')
+ax1.set_xlabel('Feature 1')
+ax1.set_ylabel('Feature 2')
+
+# DBSCAN结果
+unique_labels = np.unique(y_dbscan)
+colors = plt.cm.Spectral(np.linspace(0, 1, len(unique_labels)))
+for k, col in zip(unique_labels, colors):
+    if k == -1:
+        col = 'k'  # 黑色表示噪声
+    class_member_mask = (y_dbscan == k)
+    xy = X[class_member_mask]
+    ax2.scatter(xy[:, 0], xy[:, 1], c=[col], s=50)
+ax2.set_title('DBSCAN Clustering')
+ax2.set_xlabel('Feature 1')
+ax2.set_ylabel('Feature 2')
+
+plt.tight_layout()
+plt.show()
+
+# 4评估
+kmeans_silhouette = silhouette_score(X, y_kmeans)
+dbscan_silhouette = silhouette_score(X[y_dbscan != -1], y_dbscan[y_dbscan != -1])  # 排除噪声点
+
+print(f""K-Means轮廓系数: {kmeans_silhouette:.4f}"")
+print(f""DBSCAN轮廓系数: {dbscan_silhouette:.4f}"")
+print(f""DBSCAN发现的簇数量: {len(np.unique(y_dbscan)) - (1 if -1 in y_dbscan else 0)}"")
+print(f""DBSCAN噪声点数量: {np.sum(y_dbscan == -1)}"")
+
+# 5分析：DBSCAN能发现任意形状的簇且能识别噪声，更适合此类数据",program
+14,Facebook Prophet预测,"使用Facebook Prophet库对时间序列数据进行预测。
+加载航空乘客数据，确保日期列为datetime类型。
+将数据整理成Prophet要求的格式（ds日期列和y数值列）。
+创建Prophet模型，添加年度季节性成分。
+创建未来12个月的数据框并进行预测。
+绘制预测结果图和各成分分解图。","import pandas as pd
+import matplotlib.pyplot as plt
+from prophet import Prophet
+
+# 1加载数据
+url = ""https://raw.githubusercontent.com/jbrownlee/Datasets/master/airline-passengers.csv""
+df = pd.read_csv(url)
+
+# 2. 整理数据格式
+df['Month'] = pd.to_datetime(df['Month'])
+df = df.rename(columns={'Month': 'ds', 'Passengers': 'y'})
+print(df.head())
+
+# 3创建并训练模型
+model = Prophet(seasonality_mode='multiplicative', yearly_seasonality=True)
+model.add_seasonality(name='monthly', period=30.5, fourier_order=5)
+model.fit(df)
+
+# 4创建未来数据框并预测
+future = model.make_future_dataframe(periods=12, freq='M')
+forecast = model.predict(future)
+
+# 5绘图
+# 预测结果图
+fig1 = model.plot(forecast)
+plt.title('Prophet - 航空乘客预测')
+plt.show()
+
+# 成分分解图
+fig2 = model.plot_components(forecast)
+plt.show()
+
+# 显示预测结果的关键列
+print(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail())",program
+15,局部离群因子检测,"使用局部离群因子算法检测二维数据集中的异常点。
+生成一个包含两个正态分布簇和一些随机异常点的数据集。
+使用LocalOutlierFactor算法进行异常检测，设置n_neighbors=20。
+计算每个样本的LOF得分（负值越大越可能是异常）。
+可视化结果，用不同颜色和大小表示正常点和异常点。
+通过决策函数找出前5个最异常的样本。","from sklearn.neighbors import LocalOutlierFactor
+from sklearn.datasets import make_blobs
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 1生成数据
+X, y_true = make_blobs(n_samples=300, centers=2, cluster_std=0.8, random_state=42)
+# 添加异常点
+rng = np.random.RandomState(42)
+X_outliers = rng.uniform(low=-8, high=8, size=(10, 2))
+X = np.vstack([X, X_outliers])
+
+# 2. 使用LOF进行异常检测
+lof = LocalOutlierFactor(n_neighbors=20, contamination=0.03)
+y_pred = lof.fit_predict(X)  # 1为正常，-1为异常
+lof_scores = -lof.negative_outlier_factor_  # LOF得分
+
+# 3可视化
+plt.figure(figsize=(12, 6))
+
+# 绘制正常点
+normal_mask = (y_pred == 1)
+plt.scatter(X[normal_mask, 0], X[normal_mask, 1], 
+           c=lof_scores[normal_mask], cmap='viridis', 
+           s=50, edgecolor='k', label='正常点')
+
+# 绘制异常点
+outlier_mask = (y_pred == -1)
+plt.scatter(X[outlier_mask, 0], X[outlier_mask, 1], 
+           c=lof_scores[outlier_mask], cmap='viridis', 
+           s=200, edgecolor='r', linewidth=2, marker='*', label='异常点')
+
+plt.colorbar(label='LOF Score')
+plt.legend()
+plt.title('局部离群因子检测')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.show()
+
+# 4找出最异常的5个样本
+top_5_outlier_indices = np.argsort(lof_scores)[-5:][::-1]
+print(""前5个最异常样本的索引和得分:"")
+for i, idx in enumerate(top_5_outlier_indices):
+    print(f""第{i+1}名: 索引={idx}, LOF得分={lof_scores[idx]:.4f}, 坐标=({X[idx, 0]:.2f}, {X[idx, 1]:.2f})"")",program
